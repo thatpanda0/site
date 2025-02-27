@@ -1,1 +1,30 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 10 Lock Screen</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div class="time" id="time">9:25</div>
+    <div class="date" id="date">Tuesday, January 18</div>
+    <div class="availability-box">
+        <p>Available<br><span class="small-text">Available for the rest of the day</span></p>
+    </div>
+    <div class="button-container">
+        <button class="small-box"><span class="button-text">Call</span></button>
+        <button class="small-box"><span class="button-text">Whiteboard</span></button>
+        <button class="small-box"><span class="button-text">Connect</span></button>
+    </div>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('time').textContent = now.getHours() + ':' + (now.getMinutes()<10?'0':'') + now.getMinutes();
+            document.getElementById('date').textContent = now.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
