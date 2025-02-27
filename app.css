@@ -1,0 +1,98 @@
+@font-face {
+    font-family: "Segoe UI";
+    src: local("Segoe UI Light"), url("https://discordstyles.github.io/Fluent/fonts/light.woff2") format("woff2");
+    font-weight: 100;
+  }
+  @font-face {
+    font-family: "Segoe UI";
+    src: local("Segoe UI Semilight"), url("https://discordstyles.github.io/Fluent/fonts/semilight.woff2") format("woff2");
+    font-weight: 200;
+  }
+  @font-face {
+    font-family: "Segoe UI";
+    src: local("Segoe UI"), url("https://discordstyles.github.io/Fluent/fonts/normal.woff2") format("woff2");
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "Segoe UI";
+    src: local("Segoe UI Semibold"), url("https://discordstyles.github.io/Fluent/fonts/semibold.woff2") format("woff2");
+    font-weight: 600;
+  }
+  @font-face {
+    font-family: "Segoe UI";
+    src: local("Segoe UI Bold"), url("https://discordstyles.github.io/Fluent/fonts/bold.woff2") format("woff2");
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: "Segoe Fluent Icons";
+    src: local("Segoe Fluent Icons"), url("https://takosthings.github.io/Fluent-Discord-Fonts/Segoe-Fluent-Icons.ttf") format("truetype");
+  }
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url('Img304.png') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: "Segoe UI", sans-serif;
+    flex-direction: column;
+}
+.time {
+    font-size: 120px;
+}
+.date {
+    font-size: 24px;
+}
+.availability-box {
+    background: rgba(48, 116, 148, 0.75);
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    text-align: left;
+    margin-top: 20px;
+    width: 438px;
+    height: 136px;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 30px;
+}
+.button-container {
+    margin-right: 0px;
+}
+.small-box {
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 20px;
+  text-align: left;
+  margin-top: 6px;
+  width: 156px;
+  height: 156px;
+  margin-left: 1px;
+  font-family: "Segoe UI Semibold", sans-serif;
+  font-size: 15px;
+  border: none !important;
+}
+.small-text {
+  font-size: 24px;
+  font-family: "Segoe UI Semilight", sans-serif;
+  color: #cccccc;
+}
+.button-text {
+  position: relative;
+  top: 58px;
+  left: -6px;
+}
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  z-index: -1;
+}
