@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial.0">
     <title>Windows 10 Lock Screen</title>
     <link rel="stylesheet" href="app.css">
+    <script src="app.js"></script>
 </head>
 <body>
     <div class="content-wrapper"></div>
         <button id="bg-upload-btn" class="bg-button">&#xE713;</button>
+        <button id="light-mode-btn" class="other-button">&#xE706;</button>
         <input type="file" id="bg-input" accept="image/*" style="display: none;">
         
         <div class="time" id="time">9:25</div>
         <div class="date" id="date">Tuesday, January 18</div>
         <div class="availability-box">
-            <p>Available<br><span class="small-text">Available for the rest of the day</span></p>
+            <p>Available<br><span class="available-text">Available for the rest of the day</span></p>
         </div>
         <div class="button-container">
             <button class="small-box" onclick="window.location.href='https://teams.microsoft.com/';"><span class="icon">&#xE714;</span><span class="button-text">Call</span></button>
@@ -28,7 +30,7 @@
         <div class="username" contenteditable="True">Studio A Surface Hub 2S</div>
 
         <div class="windows-container">
-            <button class="windows-button"></button>
+            <button class="windows-button" onclick="toggleFlyout()"></button>
         </div>
         
         <div class="overlay" id="overlay" onclick="toggleFlyout()">
@@ -42,10 +44,6 @@
                 document.getElementById('time').textContent = now.getHours() + ':' + (now.getMinutes()<10?'0':'') + now.getMinutes();
                 document.getElementById('date').textContent = now.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
             }
-            function toggleFlyout() {
-                const overlay = document.getElementById('overlay');
-                overlay.style.display = (overlay.style.display === 'flex') ? 'none' : 'flex';
-            }
             setInterval(updateTime, 1000);
             updateTime();
             
@@ -53,6 +51,10 @@
                 document.getElementById('bg-input').click();
             });
             
+            document.getElementById('light-mode-btn').addEventListener('click', function () {
+            document.body.classList.toggle('light-mode');
+            });
+
             document.getElementById('bg-input').addEventListener('change', function(event) {
                 const file = event.target.files[0];
                 if (file) {
